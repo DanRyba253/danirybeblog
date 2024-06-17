@@ -1,0 +1,17 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Dani Rybe's Blog"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "Blog of Dani Rybe"
+
+[author]
+name = "Dani Rybe"
+headline = "Programming hobbyist and Haskell enjoyer (she/her)"
+image = "bocchi.jpg"
+links = [ { github = "https://github.com/DanRyba253" }, { reddit = "https://www.reddit.com/user/Daniel_Rybe/" } ]

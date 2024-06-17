@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Dani Rybe&#39;s Blog</title>
+    <link>http://localhost:39959/posts/</link>
+    <description>Recent content in Posts on Dani Rybe&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 Dani Rybe</copyright>
+    <lastBuildDate>Mon, 17 Jun 2024 20:21:27 +0700</lastBuildDate><atom:link href="http://localhost:39959/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unordered N Tuples</title>
+      <link>http://localhost:39959/posts/unordered-n-tuples/</link>
+      <pubDate>Mon, 17 Jun 2024 20:21:27 +0700</pubDate>
+      
+      <guid>http://localhost:39959/posts/unordered-n-tuples/</guid>
+      <description>main :: IO () main = return () </description>
+      
+    </item>
+    
+  </channel>
+</rss>
