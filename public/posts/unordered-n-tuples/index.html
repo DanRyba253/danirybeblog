@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=39959&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/danirybeblog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=danirybeblog/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -8,16 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Unordered N Tuples &middot; Dani Rybe&#39;s Blog</title>
-  <meta name="title" content="Unordered N Tuples &middot; Dani Rybe&#39;s Blog" />
+  <title>Unordered Homogenous N-tuples for guaranteed commutativity &middot; Dani Rybe&#39;s Blog</title>
+  <meta name="title" content="Unordered Homogenous N-tuples for guaranteed commutativity &middot; Dani Rybe&#39;s Blog" />
   
-  <meta name="description" content="Blog of Dani Rybe" />
-  
-  
-  
-  <link rel="canonical" href="http://localhost:39959/posts/unordered-n-tuples/" />
+  <meta name="description" content="Defining a type of unordered containers and using it to write commutative functions" />
+  <meta name="keywords" content="type-level-programming, " />
   
   
+  <link rel="canonical" href="http://localhost:1313/danirybeblog/posts/unordered-n-tuples/" />
   
   
   
@@ -26,11 +24,13 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.be1bcb27b41bdbbf9ed60621f46ce7671590214a3095e05d8c5ec91a5c55731a86189d21200868ba80bc20170ef787613fbe6773e7b8f1791a2c50b1f8de5d47.css"
+  
+  
+  <link type="text/css" rel="stylesheet" href="/danirybeblog/css/main.bundle.min.be1bcb27b41bdbbf9ed60621f46ce7671590214a3095e05d8c5ec91a5c55731a86189d21200868ba80bc20170ef787613fbe6773e7b8f1791a2c50b1f8de5d47.css"
     integrity="sha512-vhvLJ7Qb27&#43;e1gYh9GznZxWQIUowleBdjF7JGlxVcxqGGJ0hIAhouoC8IBcO94dhP75nc&#43;e48XkaLFCx&#43;N5dRw==" />
   
   
-  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+  <script type="text/javascript" src="/danirybeblog/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
     integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
   
   
@@ -40,18 +40,18 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.b89ac69ff9802fd5418564a45dada46f018c4ac81ae1bf932b5b6592063cf05a524e658c0ed84f3b96023c793cc651ac796e79381a45512a08354ba66739c767.js"
+  <script defer type="text/javascript" id="script-bundle" src="/danirybeblog/js/main.bundle.min.b89ac69ff9802fd5418564a45dada46f018c4ac81ae1bf932b5b6592063cf05a524e658c0ed84f3b96023c793cc651ac796e79381a45512a08354ba66739c767.js"
     integrity="sha512-uJrGn/mAL9VBhWSkXa2kbwGMSsga4b&#43;TK1tlkgY88FpSTmWMDthPO5YCPHk8xlGseW55OBpFUSoINUumZznHZw==" data-copy="" data-copied=""></script>
   
   
-  <script src="/js/zoom.min.js"></script>
+  <script src="/danirybeblog/js/zoom.min.js"></script>
   
   
   
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/danirybeblog/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/danirybeblog/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/danirybeblog/favicon-16x16.png" />
+  <link rel="manifest" href="/danirybeblog/site.webmanifest" />
   
   
   
@@ -59,20 +59,21 @@
   
   
   
-  <meta property="og:url" content="http://localhost:39959/posts/unordered-n-tuples/">
+  <meta property="og:url" content="http://localhost:1313/danirybeblog/posts/unordered-n-tuples/">
   <meta property="og:site_name" content="Dani Rybe&#39;s Blog">
-  <meta property="og:title" content="Unordered N Tuples">
-  <meta property="og:description" content="main :: IO () main = return () ">
+  <meta property="og:title" content="Unordered Homogenous N-tuples for guaranteed commutativity">
+  <meta property="og:description" content="Defining a type of unordered containers and using it to write commutative functions">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-06-17T20:21:27+07:00">
     <meta property="article:modified_time" content="2024-06-17T20:21:27+07:00">
+    <meta property="article:tag" content="Type-Level-Programming">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Unordered N Tuples">
-  <meta name="twitter:description" content="main :: IO () main = return () ">
+  <meta name="twitter:title" content="Unordered Homogenous N-tuples for guaranteed commutativity">
+  <meta name="twitter:description" content="Defining a type of unordered containers and using it to write commutative functions">
 
   
   <script type="application/ld+json">
@@ -80,12 +81,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Unordered N Tuples",
-    "headline": "Unordered N Tuples",
+    "name": "Unordered Homogenous N-tuples for guaranteed commutativity",
+    "headline": "Unordered Homogenous N-tuples for guaranteed commutativity",
     
-    "abstract": "main :: IO () main = return () ",
+    "abstract": "Defining a type of unordered containers and using it to write commutative functions",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:39959\/posts\/unordered-n-tuples\/",
+    "url" : "http:\/\/localhost:1313\/danirybeblog\/posts\/unordered-n-tuples\/",
     "author" : {
       "@type": "Person",
       "name": "Dani Rybe"
@@ -96,10 +97,10 @@
     
     "dateModified": "2024-06-17T20:21:27\u002b07:00",
     
-    
+    "keywords": ["type-level-programming"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "8"
+    "wordCount": "1776"
   }]
   </script>
 
@@ -119,7 +120,7 @@
   
   
 
-<script src="/lib/jquery/jquery.slim.min.js" integrity=""></script>
+<script src="/danirybeblog/lib/jquery/jquery.slim.min.js" integrity=""></script>
 
 
 
@@ -167,7 +168,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Dani Rybe&rsquo;s Blog</a>
+            <a href="/danirybeblog/" class="text-base font-medium text-gray-500 hover:text-gray-900">Dani Rybe&rsquo;s Blog</a>
             
 
         </nav>
@@ -176,7 +177,7 @@
             
             
             
-  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/danirybeblog/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
         Posts
@@ -187,7 +188,7 @@
 
             
             
-  <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/danirybeblog/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
         Tags
@@ -198,7 +199,7 @@
 
             
             
-  <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/danirybeblog/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
         Categories
@@ -330,7 +331,7 @@
 
                     
   <li class="mt-1">
-    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/danirybeblog/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
             Posts
@@ -345,7 +346,7 @@
 
                     
   <li class="mt-1">
-    <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/danirybeblog/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
             Tags
@@ -360,7 +361,7 @@
 
                     
   <li class="mt-1">
-    <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/danirybeblog/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
             Categories
@@ -413,7 +414,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Unordered N Tuples
+      Unordered Homogenous N-tuples for guaranteed commutativity
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -460,10 +461,10 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-17 20:21:27 &#43;0700 &#43;07">17 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span>8 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-06-17 20:21:27 &#43;0700 &#43;07">17 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1776 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
-<script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
+<script type="text/javascript" src="/danirybeblog/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
 
 <span class="mb-[2px]">
     <span id="zen-mode-button"
@@ -491,6 +492,42 @@
 
 
 
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/danirybeblog/categories/haskell/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Haskell
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/danirybeblog/tags/type-level-programming/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Type-Level-Programming
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
 
 
 
@@ -520,7 +557,7 @@
         
       
       <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-      alt="Dani Rybe" src="/bocchi_huebd16162d5e937f57390e7761f044b3c_70321_192x192_fill_q75_box_center.jpg" />
+      alt="Dani Rybe" src="/danirybeblog/bocchi_huebd16162d5e937f57390e7761f044b3c_70321_192x192_fill_q75_box_center.jpg" />
     
   
   <div class="place-self-center">
@@ -592,7 +629,51 @@
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
-    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#a-truly-unordered-collection">A Truly Unordered Collection</a></li>
+    <li><a href="#unordered-n-tuples">Unordered N-tuples</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#future-work">Future work</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#a-truly-unordered-collection">A Truly Unordered Collection</a></li>
+    <li><a href="#unordered-n-tuples">Unordered N-tuples</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#future-work">Future work</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+   </div>
+      </div>
+      
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
@@ -600,9 +681,311 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">main</span> <span class="ow">::</span> <span class="kt">IO</span> <span class="nb">()</span>
-</span></span><span class="line"><span class="cl"><span class="nf">main</span> <span class="ow">=</span> <span class="n">return</span> <span class="nb">()</span>
-</span></span></code></pre></div>
+          
+
+<h2 class="relative group">Introduction 
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>A few days ago, I stumbled upon
+<a href="https://gelisam.blogspot.com/2013/07/the-commutative-monad.html" target="_blank">this blogpost</a>
+in which the author proposes a way to restrict the type of binary functions to
+only allow for ones that are commutative. The key idea is to introduce unordered collections,
+and no, I&rsquo;m not talking about Sets or Maps or whatever. Those data structures are actually
+quite ordered, in the sense that they contain the ordering information of their elements:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kt">Data</span><span class="o">.</span><span class="kt">Set</span><span class="o">.</span><span class="n">elems</span> <span class="ow">::</span> <span class="kt">Set</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">Data</span><span class="o">.</span><span class="kt">Map</span><span class="o">.</span><span class="n">elems</span> <span class="ow">::</span> <span class="kt">Map</span> <span class="n">k</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+</span></span></code></pre></div><p>The way I want you to think about it is this: <strong>if I can get a list from a Set/Map,
+which contains the ordering information of its elements, then that information
+must&rsquo;ve already been contained in the original Set/Map!</strong></p>
+<p>But a truly unordered collection would not have any kind of ordering of its elements whatsoever,
+while still somehow allowing us to work with them. And any function that takes
+its arguments in a collection like that would be commutative by default
+because it wouldn&rsquo;t be able to observe their order. There would be no order to observe.</p>
+
+
+<h2 class="relative group">A Truly Unordered Collection 
+    <div id="a-truly-unordered-collection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#a-truly-unordered-collection" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The aforementioned <a href="https://gelisam.blogspot.com/2013/07/the-commutative-monad.html" target="_blank">blogpost</a>
+suggests implementing an unordered pair something like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="kr">newtype</span> <span class="kt">UnorderedPair</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">UP</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="n">diffBy</span> <span class="ow">::</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">Either</span> <span class="kt">Bool</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">}</span>
+</span></span></code></pre></div><p>The idea, is that to access the elements of an unordered pair, we need to first differentiate between them.
+We supply a function <code>f :: a -&gt; Bool</code>. If it returns different values for the elements of the pair,
+then we have successfully differentiated between them, and we get them back (<code>Right (a1, a2)</code>) where
+<code>f a1 == True</code> and <code>f a2 == False</code>. Notice that the ordering of <code>a1</code> and <code>a2</code> is completely
+determined by <code>f</code> and not by any information already present in the <code>UnorderedPair</code>.</p>
+<p>But if <code>f</code> returns the same value for both elements of the pair, then we have not
+successfully differentiated between them, and we get back <code>Left False</code> or <code>Left True</code> depending on
+the result of <code>f</code>.</p>
+<p>Basically, <code>diffBy</code> classifies elements of <code>UnorderedPair</code> using a predicate.</p>
+<p>Another way to think about this is that we can only observe ordered data, so in order
+to observe <code>a1</code> and <code>a2</code> we need to order them, and that&rsquo;s exactly what <code>f</code>
+attempts to do.</p>
+<p>Another interesting analogy is that <code>UnorderedPair a</code> is like two a&rsquo;s superimposed perfectly on top of each other.
+If you don&rsquo;t know what type they are, then they look the same to you, and there is no way to separate them.
+That is, unless you can find some sort of difference between them, which is what <code>f</code> does.</p>
+<p>Anyway, now we can write stuff like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">and</span> <span class="ow">::</span> <span class="kt">UnorderedPair</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">and</span> <span class="n">ub</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">diffBy</span> <span class="n">ub</span> <span class="n">id</span> <span class="kr">of</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Left</span> <span class="kt">True</span>      <span class="ow">-&gt;</span> <span class="kt">True</span>  <span class="c1">-- both booleans are True</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Right</span> <span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">False</span> <span class="c1">-- b1 is True, b2 is False</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Left</span> <span class="kt">False</span>     <span class="ow">-&gt;</span> <span class="kt">False</span> <span class="c1">-- both booleans are False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">or</span> <span class="ow">::</span> <span class="kt">UnorderedPair</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">or</span> <span class="n">ub</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">diffBy</span> <span class="n">ub</span> <span class="n">id</span> <span class="kr">of</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Left</span> <span class="kt">True</span>      <span class="ow">-&gt;</span> <span class="kt">True</span>  <span class="c1">-- both booleans are True</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Right</span> <span class="p">(</span><span class="n">b1</span><span class="p">,</span> <span class="n">b2</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">True</span>  <span class="c1">-- b1 is True, b2 is False</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Left</span> <span class="kt">False</span>     <span class="ow">-&gt;</span> <span class="kt">False</span> <span class="c1">-- both booleans are False</span>
+</span></span></code></pre></div><p>Now, as long as we construct unordered pairs correctly, functions <code>and</code> and <code>or</code>
+are guaranteed to be commutative, just from their type. Cool!</p>
+
+<figure>
+        <img
+          class="my-0 rounded-md"
+          srcset="
+          /danirybeblog/posts/unordered-n-tuples/cool_hu69b6483e8156b20cefd842068025c012_3489550_330x0_resize_box_1.gif 330w,
+          /danirybeblog/posts/unordered-n-tuples/cool_hu69b6483e8156b20cefd842068025c012_3489550_660x0_resize_box_1.gif 660w,
+          /danirybeblog/posts/unordered-n-tuples/cool_hu69b6483e8156b20cefd842068025c012_3489550_1024x0_resize_box_1.gif 1024w,
+          /danirybeblog/posts/unordered-n-tuples/cool_hu69b6483e8156b20cefd842068025c012_3489550_1320x0_resize_box_1.gif 2x"
+          src="/danirybeblog/posts/unordered-n-tuples/cool_hu69b6483e8156b20cefd842068025c012_3489550_660x0_resize_box_1.gif"
+          alt=""
+        />
+  
+  
+  </figure>
+<p>But, I hear you ask. What if we need a function that takes in 3 arguments, or 4 arguments,
+or even&hellip; n arguments?
+In other words, the next step is to somehow generalize <code>UnorderedPair</code> into a collection that
+can hold any number of elements.</p>
+
+
+<h2 class="relative group">Unordered N-tuples 
+    <div id="unordered-n-tuples" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#unordered-n-tuples" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>For brevity, I call this collection <code>U</code> for &ldquo;Unordered&rdquo;. Here&rsquo;s how I define it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="c1">-- type level Nats</span>
+</span></span><span class="line"><span class="cl"><span class="kr">data</span> <span class="kt">Nat</span> <span class="ow">=</span> <span class="kt">Z</span> <span class="o">|</span> <span class="kt">S</span> <span class="kt">Nat</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- singleton types for Nats</span>
+</span></span><span class="line"><span class="cl"><span class="kr">data</span> <span class="kt">Natural</span> <span class="p">(</span><span class="n">n</span> <span class="ow">::</span> <span class="kt">Nat</span><span class="p">)</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">NZ</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="kt">Z</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">NS</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="n">n</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span> <span class="p">(</span><span class="kt">S</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- type family for adding Nats</span>
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="kr">family</span> <span class="p">(</span><span class="n">n</span> <span class="ow">::</span> <span class="kt">Nat</span><span class="p">)</span> <span class="kt">:+:</span> <span class="p">(</span><span class="n">m</span> <span class="ow">::</span> <span class="kt">Nat</span><span class="p">)</span> <span class="ow">::</span> <span class="kt">Nat</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Z</span> <span class="kt">:+:</span> <span class="n">m</span> <span class="ow">=</span> <span class="n">m</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">S</span> <span class="n">n</span> <span class="kt">:+:</span> <span class="n">m</span> <span class="ow">=</span> <span class="kt">S</span> <span class="p">(</span><span class="n">n</span> <span class="kt">:+:</span> <span class="n">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- result of splitting U based on a predicate</span>
+</span></span><span class="line"><span class="cl"><span class="kr">data</span> <span class="kt">USplit</span> <span class="p">(</span><span class="n">l</span> <span class="ow">::</span> <span class="kt">Nat</span><span class="p">)</span> <span class="n">a</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">US</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="n">m</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">USplit</span> <span class="p">(</span><span class="n">n</span> <span class="kt">:+:</span> <span class="n">m</span><span class="p">)</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- the unordered collection</span>
+</span></span><span class="line"><span class="cl"><span class="kr">data</span> <span class="kt">U</span> <span class="p">(</span><span class="n">n</span> <span class="ow">::</span> <span class="kt">Nat</span><span class="p">)</span> <span class="n">a</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">U0</span> <span class="ow">::</span> <span class="kt">U</span> <span class="kt">Z</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">U1</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="p">(</span><span class="kt">S</span> <span class="kt">Z</span><span class="p">)</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">UM</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="p">(</span><span class="kt">S</span> <span class="p">(</span><span class="kt">S</span> <span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">       <span class="ow">-&gt;</span> <span class="p">((</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">USplit</span> <span class="p">(</span><span class="kt">S</span> <span class="p">(</span><span class="kt">S</span> <span class="n">n</span><span class="p">))</span> <span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="p">(</span><span class="kt">S</span> <span class="p">(</span><span class="kt">S</span> <span class="n">n</span><span class="p">))</span> <span class="n">a</span>
+</span></span></code></pre></div><p>The definition of U may seem overly complicated, but it&rsquo;s based on a few basic principles:</p>
+<ol>
+<li>
+<p><code>U Z a</code> should be isomorphic to <code>()</code>.<br>
+That&rsquo;s why <code>U0</code> exists.</p>
+</li>
+<li>
+<p><code>U (S Z) a</code> should be isomorphic to <code>a</code>.<br>
+That&rsquo;s why <code>U1</code> exists.</p>
+</li>
+<li>
+<p>It should be possible to view the size of any <code>U</code>.<br>
+That&rsquo;s why <code>UM</code> includes a <code>Natural (S (S n))</code>
+as its first argument.</p>
+</li>
+<li>
+<p>Generalizing <code>UnorderedPair</code>, we get the ability to split <code>U (n :+: m) a</code> into <code>U n a</code>
+and <code>U m a</code>, based on a predicate. So we use <code>USplit</code> to hold the results of this splitting.
+Notice, how this doesn&rsquo;t create any new ordering, except for that which is created by
+the predicate.</p>
+</li>
+</ol>
+<p>Here are a few self-explanatory definitions that make working with <code>U</code> easier:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">natToInt</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="n">n</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span></span><span class="line"><span class="cl"><span class="nf">natToInt</span> <span class="kt">NZ</span>     <span class="ow">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">natToInt</span> <span class="p">(</span><span class="kt">NS</span> <span class="n">n</span><span class="p">)</span> <span class="ow">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">natToInt</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">natAdd</span> <span class="ow">::</span> <span class="kt">Natural</span> <span class="n">n</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span> <span class="n">m</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span> <span class="p">(</span><span class="n">n</span> <span class="kt">:+:</span> <span class="n">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">natAdd</span> <span class="kt">NZ</span> <span class="n">m</span> <span class="ow">=</span> <span class="n">m</span>
+</span></span><span class="line"><span class="cl"><span class="nf">natAdd</span> <span class="p">(</span><span class="kt">NS</span> <span class="n">n</span><span class="p">)</span> <span class="n">m</span> <span class="ow">=</span> <span class="kt">NS</span> <span class="p">(</span><span class="n">natAdd</span> <span class="n">n</span> <span class="n">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">unatlen</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Natural</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unatlen</span> <span class="kt">U0</span> <span class="ow">=</span> <span class="kt">NZ</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unatlen</span> <span class="p">(</span><span class="kt">U1</span> <span class="kr">_</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">NS</span> <span class="kt">NZ</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unatlen</span> <span class="p">(</span><span class="kt">UM</span> <span class="n">n</span> <span class="kr">_</span><span class="p">)</span> <span class="ow">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">ulen</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ulen</span> <span class="ow">=</span> <span class="n">natToInt</span> <span class="o">.</span> <span class="n">unatlen</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">unull</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unull</span> <span class="kt">U0</span> <span class="ow">=</span> <span class="kt">True</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unull</span> <span class="kr">_</span>  <span class="ow">=</span> <span class="kt">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">upush</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="p">(</span><span class="kt">S</span> <span class="n">n</span><span class="p">)</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nf">upush</span> <span class="n">a</span> <span class="kt">U0</span>       <span class="ow">=</span> <span class="kt">U1</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nf">upush</span> <span class="n">a</span> <span class="n">u</span><span class="o">@</span><span class="p">(</span><span class="kt">U1</span> <span class="n">b</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">UM</span> <span class="p">(</span><span class="kt">NS</span> <span class="p">(</span><span class="kt">NS</span> <span class="kt">NZ</span><span class="p">))</span> <span class="nf">\</span><span class="n">g</span> <span class="ow">-&gt;</span> <span class="kr">case</span> <span class="p">(</span><span class="n">g</span> <span class="n">a</span><span class="p">,</span> <span class="n">g</span> <span class="n">b</span><span class="p">)</span> <span class="kr">of</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">True</span><span class="p">,</span> <span class="kt">True</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">US</span> <span class="p">(</span><span class="n">upush</span> <span class="n">a</span> <span class="n">u</span><span class="p">)</span> <span class="kt">U0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">True</span><span class="p">,</span> <span class="kt">False</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">US</span> <span class="p">(</span><span class="kt">U1</span> <span class="n">a</span><span class="p">)</span> <span class="p">(</span><span class="kt">U1</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">False</span><span class="p">,</span> <span class="kt">True</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">US</span> <span class="p">(</span><span class="kt">U1</span> <span class="n">b</span><span class="p">)</span> <span class="p">(</span><span class="kt">U1</span> <span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">False</span><span class="p">,</span> <span class="kt">False</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">US</span> <span class="kt">U0</span> <span class="p">(</span><span class="n">upush</span> <span class="n">a</span> <span class="n">u</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">upush</span> <span class="n">a</span> <span class="p">(</span><span class="kt">UM</span> <span class="n">n</span> <span class="n">f</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">UM</span> <span class="p">(</span><span class="kt">NS</span> <span class="n">n</span><span class="p">)</span> <span class="nf">\</span><span class="n">g</span> <span class="ow">-&gt;</span> <span class="kr">case</span> <span class="p">(</span><span class="n">f</span> <span class="n">g</span><span class="p">,</span> <span class="n">g</span> <span class="n">a</span><span class="p">)</span> <span class="kr">of</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">US</span> <span class="n">ts</span> <span class="n">fs</span><span class="p">,</span> <span class="kt">True</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="kt">US</span> <span class="p">(</span><span class="n">upush</span> <span class="n">a</span> <span class="n">ts</span><span class="p">)</span> <span class="n">fs</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">US</span> <span class="n">ts</span> <span class="n">fs</span><span class="p">,</span> <span class="kt">False</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">unsafeCoerce</span> <span class="o">$</span> <span class="kt">US</span> <span class="n">ts</span> <span class="p">(</span><span class="n">upush</span> <span class="n">a</span> <span class="n">fs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Btw, I use unsafeCoerce in the definition of upush</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- but it&#39;s justified in this case.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- GHC is just too stupid to type check my code.  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- Or, more probably, I&#39;m too stupid to write code that GHC can type check. </span>
+</span></span></code></pre></div><p>And here are a few not-so-self-explanatory ones:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="c1">-- very useful, super general function</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ufold</span> <span class="ow">::</span> <span class="n">b</span>                 <span class="c1">-- if U is empty</span>
+</span></span><span class="line"><span class="cl">      <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span>          <span class="c1">-- if U has one element</span>
+</span></span><span class="line"><span class="cl">      <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span>       <span class="c1">-- predicate to split with</span>
+</span></span><span class="line"><span class="cl">      <span class="ow">-&gt;</span> <span class="p">(</span><span class="kt">USplit</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">-- split handler</span>
+</span></span><span class="line"><span class="cl">      <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ufold</span> <span class="n">if0</span> <span class="n">if1</span> <span class="n">pred</span> <span class="n">splitHandler</span> <span class="n">u</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">u</span> <span class="kr">of</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">U0</span>                <span class="ow">-&gt;</span> <span class="n">if0</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">U1</span> <span class="n">a</span>              <span class="ow">-&gt;</span> <span class="n">if1</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">UM</span> <span class="kr">_</span> <span class="n">splitter</span> <span class="ow">-&gt;</span> <span class="n">splitHandler</span> <span class="p">(</span><span class="n">splitter</span> <span class="n">pred</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Vec type</span>
+</span></span><span class="line"><span class="cl"><span class="kr">data</span> <span class="kt">Vec</span> <span class="p">(</span><span class="n">n</span> <span class="ow">::</span> <span class="kt">Nat</span><span class="p">)</span> <span class="n">a</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">VNil</span> <span class="ow">::</span> <span class="kt">Vec</span> <span class="kt">Z</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">:&gt;</span><span class="p">)</span> <span class="ow">::</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Vec</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">Vec</span> <span class="p">(</span><span class="kt">S</span> <span class="n">n</span><span class="p">)</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="kr">infixr</span> <span class="mi">5</span> <span class="kt">:&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- &#34;forgetful&#34; function</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- forgets the ordering of elements in Vec</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unorder</span> <span class="ow">::</span> <span class="kt">Vec</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unorder</span> <span class="kt">VNil</span> <span class="ow">=</span> <span class="kt">U0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unorder</span> <span class="p">(</span><span class="n">a</span> <span class="kt">:&gt;</span> <span class="n">as</span><span class="p">)</span> <span class="ow">=</span> <span class="n">upush</span> <span class="n">a</span> <span class="p">(</span><span class="n">unorder</span> <span class="n">as</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- forgets the length of Vec</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unlength</span> <span class="ow">::</span> <span class="p">(</span><span class="n">forall</span> <span class="n">n</span> <span class="o">.</span> <span class="kt">Vec</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unlength</span> <span class="n">f</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="n">f</span> <span class="kt">VNil</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unlength</span> <span class="n">f</span> <span class="p">(</span><span class="n">a</span> <span class="kt">:</span> <span class="n">as</span><span class="p">)</span> <span class="ow">=</span> <span class="n">unlength</span> <span class="p">(</span><span class="n">f</span> <span class="o">.</span> <span class="p">(</span><span class="n">a</span> <span class="kt">:&gt;</span><span class="p">))</span> <span class="n">as</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- unfucks your polymorphic (guaranteed to be commutative) function.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unfuck</span> <span class="ow">::</span> <span class="p">(</span><span class="n">forall</span> <span class="n">n</span> <span class="o">.</span> <span class="kt">U</span> <span class="n">n</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="nf">unfuck</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">unlength</span> <span class="p">(</span><span class="n">f</span> <span class="o">.</span> <span class="n">unorder</span><span class="p">)</span>
+</span></span></code></pre></div><p>So now we have an unordered collection <code>U</code> that can hold any number of elements
+and a full arsenal of functions to work with it.
+I&rsquo;m not sure if it&rsquo;s a good idea to go out of my comfort zone like that,
+but I think I want to try writing some actually executable code!</p>
+
+
+<h2 class="relative group">Examples 
+    <div id="examples" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#examples" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="c1">-- boolean operations</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">andU</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">andU</span> <span class="ow">=</span> <span class="n">ufold</span> <span class="kt">True</span> <span class="n">id</span> <span class="n">id</span> <span class="nf">\</span><span class="p">(</span><span class="kt">US</span> <span class="n">ts</span> <span class="n">fs</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">unull</span> <span class="n">fs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">and2</span> <span class="ow">::</span> <span class="kt">U</span> <span class="p">(</span><span class="kt">S</span> <span class="p">(</span><span class="kt">S</span> <span class="kt">Z</span><span class="p">))</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">and2</span> <span class="ow">=</span> <span class="n">andU</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- &gt;&gt;&gt; and2 $ unorder (True :&gt; False :&gt; VNil)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">and</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Bool</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">and</span> <span class="ow">=</span> <span class="n">unfuck</span> <span class="n">andU</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">orU</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">orU</span> <span class="ow">=</span> <span class="n">ufold</span> <span class="kt">False</span> <span class="n">id</span> <span class="n">id</span> <span class="nf">\</span><span class="p">(</span><span class="kt">US</span> <span class="n">ts</span> <span class="n">fs</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">not</span> <span class="p">(</span><span class="n">unull</span> <span class="n">ts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">or2</span> <span class="ow">::</span> <span class="kt">U</span> <span class="p">(</span><span class="kt">S</span> <span class="p">(</span><span class="kt">S</span> <span class="kt">Z</span><span class="p">))</span> <span class="kt">Bool</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">or2</span> <span class="ow">=</span> <span class="n">orU</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- &gt;&gt;&gt; or2 $ unorder (True :&gt; False :&gt; VNil)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">or</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Bool</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+</span></span><span class="line"><span class="cl"><span class="nf">or</span> <span class="ow">=</span> <span class="n">unfuck</span> <span class="n">orU</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- adding function</span>
+</span></span><span class="line"><span class="cl"><span class="nf">add</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span></span><span class="line"><span class="cl"><span class="nf">add</span> <span class="ow">=</span> <span class="n">unfuck</span> <span class="n">addU</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">addU</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">addU</span> <span class="ow">=</span> <span class="n">ufold</span> <span class="mi">0</span> <span class="n">id</span> <span class="p">(</span><span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="nf">\</span><span class="p">(</span><span class="kt">US</span> <span class="n">neg</span> <span class="n">nonNeg</span><span class="p">)</span> <span class="ow">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">addNonNeg</span> <span class="n">nonNeg</span> <span class="o">-</span> <span class="n">addPos</span> <span class="p">(</span><span class="n">negate</span> <span class="o">&lt;$&gt;</span> <span class="n">neg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">addNonNeg</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">addNonNeg</span> <span class="ow">=</span> <span class="n">ufold</span> <span class="mi">0</span> <span class="n">id</span> <span class="p">(</span><span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nf">\</span><span class="p">(</span><span class="kt">US</span> <span class="kr">_</span> <span class="n">p</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="n">addPos</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">addPos</span> <span class="ow">::</span> <span class="kt">U</span> <span class="n">n</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">addPos</span> <span class="ow">=</span> <span class="n">ufold</span> <span class="mi">0</span> <span class="n">id</span> <span class="n">even</span> <span class="nf">\</span><span class="p">(</span><span class="kt">US</span> <span class="n">e</span> <span class="n">o</span><span class="p">)</span> <span class="ow">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">let</span> <span class="n">e&#39;</span> <span class="ow">=</span> <span class="p">(`</span><span class="n">div</span><span class="p">`</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;$&gt;</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">            <span class="n">o&#39;</span> <span class="ow">=</span> <span class="p">(`</span><span class="n">div</span><span class="p">`</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;$&gt;</span> <span class="n">o</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">in</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">addNonNeg</span> <span class="n">e&#39;</span> <span class="o">+</span> <span class="n">ulen</span> <span class="n">o</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">addNonNeg</span> <span class="n">o&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- &gt;&gt;&gt; add [1, 2, 3, 4 , 5]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">-- 15</span>
+</span></span></code></pre></div><p>This is actually pretty fun. Not practical, but fun. Writing <code>add</code> was kinda like solving a puzzle.
+You need to figure out what property of inputs you can use to split them on. Here, I was able to use dvisibility by 2, but I&rsquo;m not sure how to, for example, write a function that multiplies the inputs.</p>
+
+
+<h2 class="relative group">Future work 
+    <div id="future-work" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#future-work" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Here, I outline some of the things I wanted to do, but couldn&rsquo;t figure out how to:</p>
+<ol>
+<li>Prove that any commutative function can be rewritten using <code>U</code>. Or prove otherwise.</li>
+<li>Prove that <code>U</code> in fact, doesn&rsquo;t have any ordering information.<br>
+This seems intuitive to me, but never the less, a formal proof would be nice.</li>
+<li>See if <code>ubind :: U n (U m a) -&gt; U (n :*: m) a</code> is possible to implement.<br>
+This would make <code>U</code> a kind of &ldquo;parametrized monad-like&rdquo;.</li>
+<li>Find any practical applications for anything I&rsquo;ve ever written :)</li>
+</ol>
+
         </div>
         
         
@@ -621,20 +1004,18 @@
           
         
       <script>
-        var oid = "views_posts\/unordered-n-tuples.md"
-        var oid_likes = "likes_posts\/unordered-n-tuples.md"
+        var oid = "views_posts\/unordered-n-tuples\/index.md"
+        var oid_likes = "likes_posts\/unordered-n-tuples\/index.md"
       </script>
       
       
       
-      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+      <script type="text/javascript" src="/danirybeblog/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
   
     </section>
   <footer class="pt-8 max-w-prose print:hidden">
 
     
-  
-
 
     
   </footer>
@@ -700,7 +1081,7 @@
   </script>
   
   
-  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  <script type="text/javascript" src="/danirybeblog/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
   
   
 </footer>
