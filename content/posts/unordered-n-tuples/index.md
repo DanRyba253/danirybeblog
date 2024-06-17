@@ -281,3 +281,7 @@ This seems intuitive to me, but never the less, a formal proof would be nice.
 This would make `U` a kind of "parametrized monad-like".
 4. Find any practical applications for anything I've ever written :)
 
+## P.S.
+
+Oh, and if you want to play around with this, you can find all the code
+[here](https://github.com/DanRyba253/Unordered-N-Tuples).
