@@ -1,5 +1,5 @@
 +++
-title = 'Unordered Homogenous N-tuples for guaranteed commutativity'
+title = 'Unordered Homogeneous N-tuples for Guaranteed Commutativity'
 date = 2024-06-17T20:21:27+07:00
 tags = ["type-level-programming"]
 categories = ["haskell"]
