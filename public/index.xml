@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Dani Rybe</copyright>
-    <lastBuildDate>Mon, 17 Jun 2024 20:21:27 +0700</lastBuildDate><atom:link href="http://localhost:1313/danirybeblog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/danirybeblog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts on Newcomb&#39;s paradox</title>
+      <link>http://localhost:1313/danirybeblog/posts/1722788990551-newcombs-paradox/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/danirybeblog/posts/1722788990551-newcombs-paradox/</guid>
+      <description>Recently, I had my curiosity intrigued by Newcomb&amp;rsquo;s paradox, which is a philosophical paradox devised by William Newcomb in 1960.</description>
+      
+    </item>
+    
     <item>
       <title>Unordered Homogeneous N-tuples for Guaranteed Commutativity</title>
       <link>http://localhost:1313/danirybeblog/posts/unordered-n-tuples/</link>
