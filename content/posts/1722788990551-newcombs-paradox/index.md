@@ -1,11 +1,11 @@
----
-title: "Thoughts on Newcomb's paradox"
-date: 2024-08-05
-draft: false
-description: "My thoughts on how to resolve the Newcomb's paradox"
-tags: ["newcombs-paradox"]
-categories: ["philosophy", "paradoxes"]
----
++++
+title = "Thoughts on Newcomb's paradox"
+date = 2024-08-05T23:08:00+07:00
+summary = "My thoughts on how to resolve the Newcomb's paradox"
+tags = ["newcombs-paradox"]
+categories = ["philosophy", "paradoxes"]
++++
+
 Recently, I had my curiosity intrigued by Newcomb's paradox, which is a philosophical paradox devised by William Newcomb in 1960. I was never that great at introductions, so let me just shamelessly copy its description from Wikipedia to get everybody up to speed.
 
 ## The problem

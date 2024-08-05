@@ -4,19 +4,19 @@
 
   <url>
     <loc>http://localhost:1313/danirybeblog/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-05T23:08:00+07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/danirybeblog/posts/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-05T23:08:00+07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/danirybeblog/posts/1722788990551-newcombs-paradox/</loc>
-    <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-05T23:08:00+07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
