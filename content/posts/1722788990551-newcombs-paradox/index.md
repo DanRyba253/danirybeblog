@@ -25,11 +25,9 @@ The player does not know what the predictor predicted or what box B contains whi
 The paradox arises from the fact that it's possible to construct seemingly airtight arguments in favor of both choices:
 
 > Of course you should only take box B! I have seen this game show in the past. Every time a player chooses both boxes, they leave with only $1,000, and every time they choose only box B, they leave with a million! The predictor IS reliable after all.  
-
     — boxB_enjoyer420
 
 > You sweet, sweet summer child... obviously you should take both boxes! The amount of money in box B has already been decided, so by taking both boxes you get whatever is in box B, plus an additional $1000! It's a strictly better choice.  
-
     — ₓxXbothBoxesEnthusiastXxₓ
 
 Both of these positions, at least to me, seem completely reasonable, which is a problem.  
@@ -37,7 +35,6 @@ Both of these positions, at least to me, seem completely reasonable, which is a 
 Of course, there is a third position that one may take:
 
 > This game show is so fake, and you two are too stupid to see it. It's impossible to create a perfectly reliable predictor, so all your squabbles are completely meaningless.  
-
     — \_TheEnlightenedSceptic_
 
 This solution, though, isn't very satisfying, isn't it?
